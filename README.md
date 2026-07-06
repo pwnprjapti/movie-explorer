@@ -1,16 +1,77 @@
-# React + Vite
+# Movie Explorer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Movie Explorer is a lightweight React application built with Vite that allows users to search for movies and view details on a dedicated details page. The app integrates with the OMDb API for movie search and metadata, and displays embedded trailers using YouTube search results.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Search movies by title
+- Display a responsive list of movie cards
+- View movie details on a separate page
+- Embedded trailer playback for selected titles
+- Quick access to external streaming search via Hotstar
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React
+- Vite
+- React Router DOM
+- OMDb API
+- YouTube Data API
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Requirements
+
+- Node.js 18+ (or compatible)
+- npm
+
+### Install
+
+```bash
+npm install
+```
+
+### Run Locally
+
+```bash
+npm run dev
+```
+
+Open the local server URL shown in the terminal to view the application.
+
+### Build for Production
+
+```bash
+npm run build
+```
+
+### Preview Production Build
+
+```bash
+npm run preview
+```
+
+## Project Structure
+
+- `src/main.jsx` — application entry point
+- `src/App.jsx` — root component with routing
+- `src/components/nav.jsx` — top navigation bar
+- `src/components/search.jsx` — search input and button
+- `src/components/List.jsx` — movie results list
+- `src/components/MovieCard.jsx` — individual movie card display
+- `src/pages/Home.jsx` — search and results page
+- `src/pages/Details.jsx` — movie details page with trailer embed
+- `src/App.css` — application styling
+
+## Notes
+
+- The app uses a public OMDb API key in source code for search requests.
+- The details page also attempts to fetch trailer results from the YouTube Data API.
+
+## Improvement Ideas
+
+- Add error handling for failed API requests
+- Improve mobile responsiveness
+- Replace hard-coded API keys with environment variables
+- Add pagination for search results
+- Implement loading indicators for asynchronous requests
